@@ -85,3 +85,16 @@ Ketentukan method pada Aspect:
 ```
 
 > ![img_1.png](img_1.png)
+
+## Pointcut
+
+```
+- Pointcut adalah predikat yang cocok dengan Join Point.
+- Poincut merupakan kondisi yang digunakan untuk menentukan Join point.
+- Ketika kondisi terpenuhi, maka Aspect akan mengeksekusi Advice.
+- Untuk membuat pointcut, kita perlu menggunakan annotation @Pointcut.
+- setiap membuat pointcut, kita harus menentukan kondisi Join Point yang akan digunakan.
+```
+
+> Contoh: di class LogAspect.java
+> tambahkan method dengan annotation @Pointcut
