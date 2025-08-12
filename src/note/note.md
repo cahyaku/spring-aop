@@ -129,16 +129,9 @@ Ketentukan method pada Aspect:
   5. Around Advice => sebelum dan sesudah method dieksekusi
 ```
 
-## Advice Parameter
-
-```
-- Saat membuat Advice, kita bisa mendapatkan informasi dari detail
-  eksekusi methodnya melalui object Joint Point.
-- Cara: tambahkan parameter JointPoint di method Advice yang dibuat.
-```
-
 > ![img_3.png](img_3.png)
->> CARA:
+
+> > CARA:
 > Saat menggunakan Advice, kita wajib menentukan Pointcut yang
 > akan digunakan dengan menyebutkan nama method dari Pointcutnya.
 > Contoh:
@@ -146,3 +139,35 @@ Ketentukan method pada Aspect:
 > Test running HelloServiceTest.java
 > Resultnya: LogAspect di jalankan sebelum helloService.sayHello() dan helloService.bye().
 > ![img_4.png](img_4.png)
+>
+
+## Advice Parameter - untuk mengetahui detail eksekusi methodnya
+
+```
+- Saat membuat Advice, kita bisa mendapatkan informasi dari detail
+  eksekusi methodnya melalui object Joint Point.
+- Cara: tambahkan parameter JointPoint di method Advice yang dibuat.
+```
+
+> Contoh di class LogAspect.java
+> 1. Ingin method apa yang sebenarnya dieksekusi/class apa yang dieksekusi/nama methodnya.
+> 2. Tambahkan parameter JointPoint di method beforeHelloServiceMethod() class LogAspect.java
+> 3. Running unit test HelloServiceTest.java
+
+> Resultnya: lognya sudah menampilkan informasi detail eksekusi methodnya.
+> Meliputi nama package, dan nama methodnya.
+> ![img_5.png](img_5.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
