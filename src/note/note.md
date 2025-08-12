@@ -75,3 +75,13 @@ Ketentukan method pada Aspect:
 1. ada pointcut
 2. ada advice
 ```
+
+## Join Point - titik lokasi eksekusi program
+
+```
+- Joint point adalah titik lokasi eksekusi program.
+-  AspectJ sebenarnya mendukung Join Point, 
+   namun Spring AOP hanya mendukung Join Point pada method di bean.
+```
+
+> ![img_1.png](img_1.png)
