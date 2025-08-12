@@ -39,3 +39,15 @@ result setelah running = lognya sudah di panggil:
 > > Lihat jika polanya sama, kita bisa gunakan AOP untuk mengatasi masalah ini.
 > > AOP memungkinkan kita membuat Aspect yang melintasi semua method dari object tersebut.
 > > Dimana di aspectnya, kita perlu MENULIS kode untuk log satu kali saja.
+
+## Mengaktifkan AOP
+
+```
+- Default Spring Boot tidak mengaktifkan AOP.
+- Untuk mengaktifkan AOP secara manual menggunakan annotation @EnableAspectJAutoProxy
+- Kita bisa tambahkan do Bean Configuration agar fitur AOP aktif.
+```
+
+> Contoh: padaca class SpringAopApplication.java
+> Tambahkan annotation @EnableAspectJAutoProxy
+> Kemudian coba running unit test HelloServiceTest.java
