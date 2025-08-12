@@ -51,3 +51,27 @@ result setelah running = lognya sudah di panggil:
 > Contoh: padaca class SpringAopApplication.java
 > Tambahkan annotation @EnableAspectJAutoProxy
 > Kemudian coba running unit test HelloServiceTest.java
+
+## Aspect
+
+```
+- INTI dari AOP adalah Aspect.
+- Sehingga kita harus membuat Aspect terlebih dahulu.
+- Untuk membuat Aspect, 
+  cukup membuat Bean dan menambahkan annotaton Aspect pada Bean tersebut.
+- Otomatis Spring akan membuatkan object Aspect dari class tersebut.
+```
+
+> Contoh:
+> > 1. Membuat class LogAspect.java, yang dijadikan bean dengan annotation @Component
+> > 2. Dan jika ingin menjadikan class tersebut sebagai Aspect, tinggal tambahkan annotation @Aspect
+> > 3. Step 1 dan 2 berada dalam pacakege aspect di class LogAspect.
+
+```
+- Secara default, Aspect tidak berguna jika tidak menambahkan behavior pada Aspect tersebut.
+- Untuk menabahkan behaviour ke Aspect, dilakukan dengan menambhakan method pada Aspect tersebut.
+
+Ketentukan method pada Aspect:
+1. ada pointcut
+2. ada advice
+```
