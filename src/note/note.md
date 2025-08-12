@@ -21,3 +21,21 @@
 ```
 -AspectJ adalah libarary AOP yang banyak digunakan untuk implementasi AOP di Java.
 ```
+
+> Contoh membuat kode prorgram tanpa AOP dulu (agar nanti tau perbedaannya).
+
+```
+1. Buat Service class
+   package com.cahya.aop.service; => folder main
+2. Buatkan package service dan class HelloServiceTest.java
+   package com.cahya.aop.service; => folder test, class HelloServiceTest 
+result setelah running = lognya sudah di panggil:
+```
+
+> ![img.png](img.png)
+
+> Bayangkan jika method terus bertambah, kita harus membuat log terus secara manual.
+> Apa yang harus dilakukan?
+> > Lihat jika polanya sama, kita bisa gunakan AOP untuk mengatasi masalah ini.
+> > AOP memungkinkan kita membuat Aspect yang melintasi semua method dari object tersebut.
+> > Dimana di aspectnya, kita perlu MENULIS kode untuk log satu kali saja.
