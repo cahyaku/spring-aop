@@ -98,3 +98,21 @@ Ketentukan method pada Aspect:
 
 > Contoh: di class LogAspect.java
 > tambahkan method dengan annotation @Pointcut
+
+## Pointcut Expression
+
+```
+- Saat membuat pointcut, maka kita harus menambahkan 
+  expression yang berisi kondisi untuk Join Pointnya.
+- Misal kita ingin membuat Pointcut untuk semua method di class HelloService. 
+  Maka harus membuat kondisi dalam bentuk pointcut expression.
+- AspectJ mendukung Pointcut Expression TAPI Spring AOP
+  hanya mendukung yang berhubungan dengan eksekusi method.
+- Karena Spring AOP hanya akan berjalan di Bean saja, Class yang ditadai dengan @Component.
+```
+
+> ![img_2.png](img_2.png)
+> > Contoh jika ingin membuat pointcut untuk semua (Method di class HelloService)
+> > ```
+> > // Untuk menyebutkan nama kelasnya harus full dengan nama packagenya.
+> > @Pointcut("targer(com.cahya.aop.service.HelloService)")

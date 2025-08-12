@@ -12,9 +12,12 @@ import org.springframework.stereotype.Component;
 public class LogAspect {
     /**
      * Membuat pointcut untuk semua method di package com.cahya.aop.service
-     * Jadi ini niatnya helloServiceMethod() yang akan mengeksekusi semua method di HelloService
+     * Jadi ini niatnya helloServiceMethod() yang akan mengeksekusi semua method di
+     * Jadi yang di targetkan adalah semua method di class HelloService
+     * => package com.cahya.aop.service.HelloService
+     * Ingat classnya harus sebagai spring bean
      */
-    @Pointcut
+    @Pointcut("target(com.cahya.aop.service.HelloService)")
     public void helloServiceMethod() {
 
     }
