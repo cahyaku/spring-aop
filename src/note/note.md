@@ -116,3 +116,33 @@ Ketentukan method pada Aspect:
 > > ```
 > > // Untuk menyebutkan nama kelasnya harus full dengan nama packagenya.
 > > @Pointcut("targer(com.cahya.aop.service.HelloService)")
+
+## Advice
+
+```
+- Advice adalah aksi yang dilakukan oleh Aspect pada Join Point.
+- Terdapat beberapa jenis Advice:
+  1. Before Advice => sebelum method dieksekusi
+  2. After Advice => setelah method dieksekusi
+  3. After Returning Advice => setelah method dieksekusi dan BERHASIL
+  4. After Throwing Advice => setelah method dieksekusi dan GAGAL
+  5. Around Advice => sebelum dan sesudah method dieksekusi
+```
+
+## Advice Parameter
+
+```
+- Saat membuat Advice, kita bisa mendapatkan informasi dari detail
+  eksekusi methodnya melalui object Joint Point.
+- Cara: tambahkan parameter JointPoint di method Advice yang dibuat.
+```
+
+> ![img_3.png](img_3.png)
+>> CARA:
+> Saat menggunakan Advice, kita wajib menentukan Pointcut yang
+> akan digunakan dengan menyebutkan nama method dari Pointcutnya.
+> Contoh:
+> Menabahkan @Before pada class LogAspect.java
+> Test running HelloServiceTest.java
+> Resultnya: LogAspect di jalankan sebelum helloService.sayHello() dan helloService.bye().
+> ![img_4.png](img_4.png)
