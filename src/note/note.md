@@ -216,3 +216,25 @@ dan yang paling sering digunakan adalah execution.
 > 2. Buat pointcut baru dengan menggabungkan ketiga pointcut tersebut.
 > 3. Buat method advice baru dengan pointcut baru tersebut. Jadi buat @Before di class LogAspect.java
 > 4. Kemudian test running HelloServiceTest.java
+
+## Passing Parameter
+
+```
+- Saat membuat Advice, jika perlu menangkap data parameter yang ada di dalam Joint Point.
+- DAPAT dilakukan menggunakan object JointPoint.getArgs(). Namun, datanya berupa Object[].
+- Manfaatkan PointExpression args untuk mengambil data parameter, dan mengirimnya ke method Advice.
+```
+
+> Bagaimana cara mengirim parameter ke method Advice?
+> - Gunakan args(value), artinya parameter akan dikirim ke paramter di advice dengan nama value.
+> - args(value1, value2), artinya parameter yang akan dikirim ke parameter di advice dengan nama value1 dan value2.
+> - Jika hanya peduli dengan paramter awal, gunakan args(value1, value2,..) => Jadi gunakan koma .... (,..).
+
+> Contoh:
+> 1. pada pointcutHelloServiceStringParam di class LogAspect.java
+> 2. Komen dulu yang logStringParameter().
+> 3. Kemudian copy dan buat ulang, namun dengan paramter yang sesuai bukan JointPoint lagi.
+> 4. Karena kita sudah tau tipe paramaternya adalah string.
+> 5. Kemudian coba execute unit test HelloServiceTest.java
+> 6. Hasilnya sama saja, coba tambahkan dua paramter di helloService method hello().
+> 7. Update unit test HelloServiceTest.java dan running.

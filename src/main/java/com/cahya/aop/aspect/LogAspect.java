@@ -76,10 +76,24 @@ public class LogAspect {
     public void pointcutHelloServiceStringParam() {
     }
 
-    @Before("pointcutHelloServiceStringParam()")
-    public void logStringParameter(JoinPoint joinPoint) {
-        String value = joinPoint.getArgs()[0].toString();
-        log.info("Execute method with parameter: {}", value);
+    /**
+     * Menggunakan JoinPoint
+     */
+//    @Before("pointcutHelloServiceStringParam()")
+//    public void logStringParameter(JoinPoint joinPoint) {
+//        String value = joinPoint.getArgs()[0].toString();
+//        log.info("Execute method with parameter: {}", value);
+//    }
+
+    /**
+     * Pointcut Expression Format
+     * Ini mengarah pada semua method di class HelloService dengan parameter apapun.
+     * <p>
+     * Mengirim parameternya di @Before dengan args(name).
+     */
+    @Before("pointcutHelloServiceStringParam() && args(name)")
+    public void logStringParameter(String name) {
+        log.info("Execute method with parameter: {}", name);
     }
 
     /**
