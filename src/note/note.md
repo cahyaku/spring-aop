@@ -198,9 +198,21 @@ dan yang paling sering digunakan adalah execution.
 > 6. Update unit test HelloServiceTest.java
 > 6. Kemudian test running HelloServiceTest.java
 
+## Multiple Pointcut - Menggabungkan beberapa Pointcut
 
+```
+- Kita bisa menggunakan lebih dari satu pointcut expression.
+- Ini bermanfaat ketika ketika melakukan kombinasi untuk beberapa pointcut.
+- Misalnya membuat pointcut khusus untuk package service.
+- Lalu membuat pointcut khusus untuk bean dengan Suffix Service.
+- Lalu kita membuat pointcur khusus untuk public method.
+- Ketiganya itu DAPAT DIGABUNGKAN  sehingga terbentuk pointcut baru, package service, 
+  semua bean yang suffixnya Service dan methodnya public. 
+- CARA: dengan menggunakan operator && untuk menggabungkannya. 
+```
 
-
-
-
-
+> Contoh: Membuat 3 pointcut dan digabungkan dalam satu pointcut baru.
+> 1. Tambahkan 3 pointcut di class LogAspect.java
+> 2. Buat pointcut baru dengan menggabungkan ketiga pointcut tersebut.
+> 3. Buat method advice baru dengan pointcut baru tersebut. Jadi buat @Before di class LogAspect.java
+> 4. Kemudian test running HelloServiceTest.java

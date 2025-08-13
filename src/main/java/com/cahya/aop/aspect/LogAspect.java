@@ -82,4 +82,36 @@ public class LogAspect {
         log.info("Execute method with parameter: {}", value);
     }
 
+    /**
+     * 3 pointcut baru, untuk test menggabungkan beberapa pointcut
+     */
+    // mengambil semua method di package com.cahya.aop.service
+    @Pointcut("execution(* com.cahya.aop.service.*.*(..))")
+    public void pointcutServicePackage() {
+    }
+
+    // mengambil bean yang namanya diakhiri dengan Service
+    @Pointcut("bean(*Service)")
+    public void pointcutServiceBean() {
+    }
+
+    // mengambil semua method public
+    @Pointcut("execution(public * *(..))")
+    public void pointcutPublicMethod() {
+    }
+
+    /**
+     * Pointcut baru untuk menggabungkan 3 pointcut di atas
+     */
+    @Pointcut("pointcutServicePackage() && pointcutServiceBean() && pointcutPublicMethod())")
+    public void publicMethodForService() {
+    }
+
+    /**
+     * Membuat Advice yang akan dieksekusi sebelum method yang ditandai dengan pointcut
+     */
+    @Before("publicMethodForService()")
+    public void logAllPublicServiceMethod() {
+        log.info("Log for all public service method");
+    }
 }
