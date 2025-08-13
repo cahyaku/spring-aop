@@ -68,4 +68,18 @@ public class LogAspect {
         }
     }
 
+    /**
+     * Pointcut Expression Format
+     * Ini mengarah pada semua method di class HelloService dengan parameter string.
+     */
+    @Pointcut("execution(* com.cahya.aop.service.HelloService.* (java.lang.String))")
+    public void pointcutHelloServiceStringParam() {
+    }
+
+    @Before("pointcutHelloServiceStringParam()")
+    public void logStringParameter(JoinPoint joinPoint) {
+        String value = joinPoint.getArgs()[0].toString();
+        log.info("Execute method with parameter: {}", value);
+    }
+
 }

@@ -170,10 +170,33 @@ Ketentukan method pada Aspect:
 > Contoh:
 > 1. Buat sebuah Around => AroundHelloServiceMethod di class LogAspect.java
 > 2. Kemudian test running unit test HelloServiceTest.java
+>> Kesimpulan: ProceedingJoinPoint.proceed(args) digunakan untuk mengeksekusi method aslinya.
 
+## Pointcut Expression Format
 
+```
+Tiap jenis Pointcut memiliki format sendiri-sendiri, 
+dan yang paling sering digunakan adalah execution.
+```
 
+> 1 ~ Non Execution Pointcut
+> Format yang Pointcut Expression yang bukan execution:
+> HANYA menyebutkan nama targetnya saja.
+> Target juga bisa menggunakan regex jika mau lebih dari satu type.
+>> ![img_6.png](img_6.png)
+> 2 ~ Execution Pointcut
+> Untuk execution Pointcut formatnya lebih kompleks.
+> Formatnya: execution(modifier-pattern type-pattern.method-pattern(param-pattern) throws-pattern)
+> > ![img_7.png](img_7.png)
 
+> Contoh:
+> 1. Buat pointcut untuk semua method di class HelloService dengan string parameter.
+> 2. Kemudian running unit test HelloServiceTest.java
+> 3. Test running HelloServiceTest.java
+> 4. Jika ingin, tambahkan method test() di HelloService.java
+> 5. Kemudian update unit test HelloServiceTest.java
+> 6. Update unit test HelloServiceTest.java
+> 6. Kemudian test running HelloServiceTest.java
 
 
 
