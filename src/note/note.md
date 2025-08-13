@@ -158,8 +158,18 @@ Ketentukan method pada Aspect:
 > Meliputi nama package, dan nama methodnya.
 > ![img_5.png](img_5.png)
 
+## Proceeding Join Point - Untuk mengeksekusi method aslinya, seperti di Around Advice
 
+```
+- Advice dengan jenis Around => menggunakan paramter ProceedingJoinPoint.
+  Karena untuk Around, kita bisa melakukan sebelum dan setelah method dieksekusi.
+- Untuk mengeksekusi method aslinya dari Joint Point,
+  kita HARUS memanggil method ProceedingJointPoint.proceed(args).
+```
 
+> Contoh:
+> 1. Buat sebuah Around => AroundHelloServiceMethod di class LogAspect.java
+> 2. Kemudian test running unit test HelloServiceTest.java
 
 
 
